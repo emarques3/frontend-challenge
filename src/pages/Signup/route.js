@@ -1,4 +1,4 @@
-import { SignupPage } from ".";
+import { SignupPage } from 'pages/Signup';
 
 const SignupRoute = {
   Component: SignupPage,

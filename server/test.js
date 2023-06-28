@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('.');
 
-const error = err => {
+const error = (err) => {
   if (err) throw err;
 };
 
@@ -11,10 +11,7 @@ request(app)
   .expect(200, ['black', 'blue', 'green', 'red', 'white'])
   .end(error);
 
-request(app)
-  .get('/api/submit')
-  .expect(404)
-  .end(error);
+request(app).get('/api/submit').expect(404).end(error);
 
 request(app)
   .post('/api/submit')
@@ -23,7 +20,7 @@ request(app)
     password: 'foo',
     email: 'foo@bar.ca',
     color: 'blue',
-    terms: true
+    terms: true,
   })
   .expect(200)
   .end(error);
@@ -35,7 +32,7 @@ request(app)
     password: 'foo',
     email: 'foo@bar.ca',
     color: 'blue',
-    terms: true
+    terms: true,
   })
   .expect(400)
   .end(error);
@@ -47,19 +44,19 @@ request(app)
     name: 'Error',
     email: 'foo@bar.ca',
     color: 'blue',
-    terms: true
+    terms: true,
   })
   .expect(400)
   .end(error);
 
-  // Empty field.
+// Empty field.
 request(app)
   .post('/api/submit')
   .send({
     name: '',
     email: 'foo@bar.ca',
     color: 'blue',
-    terms: true
+    terms: true,
   })
   .expect(400)
   .end(error);

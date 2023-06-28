@@ -1,4 +1,4 @@
-import { AdditionalInfoPage } from ".";
+import { AdditionalInfoPage } from 'pages/AdditionalInfo';
 
 const AdditionalInfoRoute = {
   Component: AdditionalInfoPage,
