@@ -1,11 +1,11 @@
-import { SET_USER_INFO } from 'domains/user/data/store/actionTypes';
+import { SET_USER_INFO, SET_COLOR, SET_TERMS_AGREEMENT } from 'domains/user/data/store/actionTypes';
 
 const initialState = {
   name: 'Jon Doe',
-  email: '',
+  email: 'a@b.com',
   password: '',
-  chosenColor: '',
-  agreedToTerms: false,
+  chosenColor: 'red',
+  agreedToTerms: true,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -18,6 +18,22 @@ export const userReducer = (state = initialState, action) => {
         name,
         email,
         password,
+      };
+    }
+    case SET_COLOR: {
+      const { chosenColor } = action.payload;
+
+      return {
+        ...state,
+        chosenColor,
+      };
+    }
+    case SET_TERMS_AGREEMENT: {
+      const { agreedToTerms } = action.payload;
+
+      return {
+        ...state,
+        agreedToTerms,
       };
     }
     default: {

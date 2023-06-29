@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container } from 'pages/Signup/styles';
-import { useUser } from 'domains/user/data/hooks/useUser';
+import { UserForm } from 'domains/user/experience/components/UserForm';
 
-export const SignupPage = () => {
-  const { userName } = useUser();
-
-  return <Container>Signup page - {userName}</Container>;
-};
+export const SignupPage = () => (
+  <Container>
+    Signup page
+    <UserForm />
+  </Container>
+);
