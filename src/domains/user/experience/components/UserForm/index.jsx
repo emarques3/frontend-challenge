@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import {
-  Input,
-  UserContainer,
-  Row,
-  Button,
-} from 'domains/user/experience/components/UserForm/styles';
+import { Input, UserContainer, Row } from 'domains/user/experience/components/UserForm/styles';
 import { useUser } from 'domains/user/data/hooks/useUser';
 import { useNavigate } from 'react-router-dom';
 import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
+import { Navigator } from 'domains/navigation/experience/components/Navigator';
 
 export const UserForm = () => {
   const navigate = useNavigate();
@@ -40,7 +36,7 @@ export const UserForm = () => {
       <Row>
         <Input placeholder="E-mail" value={email} onChange={onChangeEmail}></Input>
       </Row>
-      <Button onClick={onClickNext}>Next</Button>
+      <Navigator buttons={[{ label: 'Next', onClick: onClickNext }]} />
     </UserContainer>
   );
 };

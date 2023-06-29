@@ -4,11 +4,11 @@ import {
   Title,
   Icon,
   Message,
-  Button,
 } from 'domains/shell/experience/components/Result/styles';
 import { useNavigate } from 'react-router-dom';
 import SignupRoute from 'pages/Signup/route';
 import { useUser } from 'domains/user/data/hooks/useUser';
+import { Navigator } from 'domains/navigation/experience/components/Navigator';
 
 export const Result = ({ title, message, iconPath }) => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const Result = ({ title, message, iconPath }) => {
       <Title>{title}</Title>
       <Icon src={iconPath} />
       <Message>{message}</Message>
-      <Button onClick={onClickRestart}>Restart</Button>
+      <Navigator buttons={[{ label: 'Restart', onClick: onClickRestart }]} />
     </ResultContainer>
   );
 };

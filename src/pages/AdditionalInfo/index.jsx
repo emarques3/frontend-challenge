@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Container, Button } from 'pages/AdditionalInfo/styles';
+import { Container } from 'pages/AdditionalInfo/styles';
 import { ColorSelector } from 'domains/user/experience/components/ColorSelector';
 import { TermsCheckbox } from 'domains/user/experience/components/TermsCheckbox';
 import SignupRoute from 'pages/Signup/route';
 import ConfirmationRoute from 'pages/Confirmation/route';
 import { useUser } from 'domains/user/data/hooks/useUser';
+import { Navigator } from 'domains/navigation/experience/components/Navigator';
 
 export const AdditionalInfoPage = () => {
   const navigate = useNavigate();
@@ -28,10 +29,12 @@ export const AdditionalInfoPage = () => {
       Additional Info page
       <ColorSelector />
       <TermsCheckbox />
-      <Button onClick={onClickBack}>Back</Button>
-      <Button onClick={onClickNext} disabled={!canProceed}>
-        Next
-      </Button>
+      <Navigator
+        buttons={[
+          { label: 'Back', onClick: onClickBack },
+          { label: 'Next', onClick: onClickNext, disabled: !canProceed },
+        ]}
+      />
     </Container>
   );
 };
