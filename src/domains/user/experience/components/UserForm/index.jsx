@@ -13,7 +13,12 @@ export const UserForm = () => {
   const [email, setEmail] = useState(userEmail);
   const [password, setPassword] = useState(userPassword);
 
-  const canProceed = !!name && !!email && !!password;
+  const isValidEmail = (enteredEmail) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(enteredEmail);
+  };
+
+  const canProceed = !!name && isValidEmail(email) && !!password;
 
   const onChangeName = (e) => {
     setName(e.target.value);
