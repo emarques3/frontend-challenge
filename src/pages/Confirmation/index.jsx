@@ -5,16 +5,18 @@ import { Container, Button } from 'pages/Confirmation/styles';
 import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
 import { ReviewInfo } from 'domains/user/experience/components/ReviewInfo';
 import { useUser } from 'domains/user/data/hooks/useUser';
+import { Loading } from 'domains/shell/experience/components/Loading';
 
 export const ConfirmationPage = () => {
   const navigate = useNavigate();
-  const { submit } = useUser();
+  const { submit, setLoading, loading } = useUser();
 
   const onClickBack = () => {
     navigate(AdditionalInfoRoute.path);
   };
 
   const onClickSubmit = () => {
+    setLoading(true);
     submit();
   };
 
@@ -22,8 +24,14 @@ export const ConfirmationPage = () => {
     <Container>
       Confirmation page
       <ReviewInfo />
-      <Button onClick={onClickBack}>Back</Button>
-      <Button onClick={onClickSubmit}>Submit</Button>
+      {loading ? (
+        <Loading size={150} />
+      ) : (
+        <>
+          <Button onClick={onClickBack}>Back</Button>
+          <Button onClick={onClickSubmit}>Submit</Button>
+        </>
+      )}
     </Container>
   );
 };

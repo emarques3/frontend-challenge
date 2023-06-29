@@ -1,6 +1,7 @@
 import {
   RESET,
   SET_COLOR,
+  SET_LOADING,
   SET_TERMS_AGREEMENT,
   SET_USER_INFO,
 } from 'domains/user/data/store/actionTypes';
@@ -11,6 +12,7 @@ const initialState = {
   password: '',
   favoriteColor: 'red',
   agreedToTerms: true,
+  loading: false,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -31,6 +33,14 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         favoriteColor,
+      };
+    }
+    case SET_LOADING: {
+      const { loading } = action.payload;
+
+      return {
+        ...state,
+        loading,
       };
     }
     case SET_TERMS_AGREEMENT: {

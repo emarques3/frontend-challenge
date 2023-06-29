@@ -6,6 +6,7 @@ import {
 } from 'domains/user/experience/components/ColorSelector/styles';
 import { useUser } from 'domains/user/data/hooks/useUser';
 import { useColors } from 'domains/settings/data/hooks/useColors';
+import { Loading } from 'domains/shell/experience/components/Loading';
 
 export const ColorSelector = () => {
   const { favoriteColor, setFavoriteColor } = useUser();
@@ -29,6 +30,7 @@ export const ColorSelector = () => {
           </Option>
         ))}
       </Selector>
+      {loading ? <Loading /> : null}
     </SelectorContainer>
   );
 };

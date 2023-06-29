@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getAgreedToTerms,
   getFavoriteColor,
+  getLoading,
   getUserPassword,
   getUserEmail,
   getUserName,
 } from 'domains/user/data/store/selectors';
 import {
   setColor,
+  setLoading as setLoadingAction,
   setTerms as setTermsAction,
   setUserInfo as setUserInfoAction,
   reset as resetAction,
@@ -25,6 +27,7 @@ export const useUser = () => {
   const userPassword = useSelector(getUserPassword);
   const favoriteColor = useSelector(getFavoriteColor);
   const agreedToTerms = useSelector(getAgreedToTerms);
+  const loading = useSelector(getLoading);
 
   const reset = () => {
     dispatch(resetAction());
@@ -36,6 +39,10 @@ export const useUser = () => {
 
   const setFavoriteColor = (value) => {
     dispatch(setColor(value));
+  };
+
+  const setLoading = (value) => {
+    dispatch(setLoadingAction({ loading: value }));
   };
 
   const setTerms = (value) => {
@@ -53,6 +60,7 @@ export const useUser = () => {
 
     const page = success ? SuccessRoute : ErrorRoute;
     navigate(page.path);
+    setLoading(false);
   };
 
   // TODO: add logic
@@ -61,9 +69,11 @@ export const useUser = () => {
   return {
     agreedToTerms,
     favoriteColor,
+    loading,
     passwordDigits,
     reset,
     setFavoriteColor,
+    setLoading,
     setTerms,
     setUserInfo,
     submit,
