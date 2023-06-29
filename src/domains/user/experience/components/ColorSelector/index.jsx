@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
   LoadingWrapper,
-  SelectorContainer,
-  Selector,
   Option,
+  Selector,
+  SelectorContainer,
 } from 'domains/user/experience/components/ColorSelector/styles';
 import { useUser } from 'domains/user/data/hooks/useUser';
 import { useColors } from 'domains/settings/data/hooks/useColors';
@@ -22,7 +22,7 @@ export const ColorSelector = () => {
 
   return (
     <SelectorContainer>
-      <Selector onChange={onChangeColor} {...{ disabled: loading }} value={color}>
+      <Selector onChange={onChangeColor} disabled={loading} value={color}>
         <Option value="">Select your favorite color</Option>
         {colors.map((item) => (
           <Option key={item} value={item}>

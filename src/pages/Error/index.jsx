@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ErrorContainer } from 'pages/Error/styles';
 import { Result } from 'domains/shell/experience/components/Result';
+import { ErrorContainer } from 'pages/Error/styles';
 
 export const ErrorPage = () => (
   <ErrorContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  NavigatorContainer,
   Button,
+  NavigatorContainer,
 } from 'domains/navigation/experience/components/Navigator/styles';
 
 export const Navigator = ({ buttons }) => (

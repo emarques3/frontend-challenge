@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  ReviewContainer,
-  List,
   InfoItem,
+  List,
+  ReviewContainer,
 } from 'domains/user/experience/components/ReviewInfo/styles';
 import { useUser } from 'domains/user/data/hooks/useUser';
 

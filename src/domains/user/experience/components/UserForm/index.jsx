@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input, UserContainer, Row } from 'domains/user/experience/components/UserForm/styles';
 import { useUser } from 'domains/user/data/hooks/useUser';
-import { useNavigate } from 'react-router-dom';
-import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
 import { Navigator } from 'domains/navigation/experience/components/Navigator';
+import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
 
 export const UserForm = () => {
   const navigate = useNavigate();

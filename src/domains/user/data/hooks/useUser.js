@@ -1,21 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   getAgreedToTerms,
   getFavoriteColor,
   getLoading,
-  getUserPassword,
   getUserEmail,
   getUserName,
+  getUserPassword,
 } from 'domains/user/data/store/selectors';
 import {
+  reset as resetAction,
   setColor,
   setLoading as setLoadingAction,
   setTerms as setTermsAction,
   setUserInfo as setUserInfoAction,
-  reset as resetAction,
 } from 'domains/user/data/store/actions';
 import { submitUserData } from 'domains/user/data/api';
-import { useNavigate } from 'react-router-dom';
 import SuccessRoute from 'pages/Success/route';
 import ErrorRoute from 'pages/Error/route';
 

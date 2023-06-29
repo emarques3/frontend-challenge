@@ -1,16 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Centered,
-  ResultContainer,
-  Title,
   Icon,
   Message,
   MessageContainer,
+  ResultContainer,
+  Title,
 } from 'domains/shell/experience/components/Result/styles';
-import { useNavigate } from 'react-router-dom';
-import SignupRoute from 'pages/Signup/route';
 import { useUser } from 'domains/user/data/hooks/useUser';
 import { Navigator } from 'domains/navigation/experience/components/Navigator';
+import SignupRoute from 'pages/Signup/route';
 
 export const Result = ({ title, message, iconPath }) => {
   const navigate = useNavigate();

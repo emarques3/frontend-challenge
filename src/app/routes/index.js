@@ -1,8 +1,8 @@
-import SignupRoute from 'pages/Signup/route';
 import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
 import ConfirmationRoute from 'pages/Confirmation/route';
-import SuccessRoute from 'pages/Success/route';
 import ErrorRoute from 'pages/Error/route';
+import SignupRoute from 'pages/Signup/route';
+import SuccessRoute from 'pages/Success/route';
 
 export const routes = [
   AdditionalInfoRoute,

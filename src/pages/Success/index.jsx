@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SuccessContainer } from 'pages/Success/styles';
 import { Result } from 'domains/shell/experience/components/Result';
+import { SuccessContainer } from 'pages/Success/styles';
 
 export const SuccessPage = () => (
   <SuccessContainer>
