@@ -4,7 +4,7 @@ const initialState = {
   name: 'Jon Doe',
   email: 'a@b.com',
   password: '',
-  chosenColor: 'red',
+  favoriteColor: 'red',
   agreedToTerms: true,
 };
 
@@ -21,11 +21,11 @@ export const userReducer = (state = initialState, action) => {
       };
     }
     case SET_COLOR: {
-      const { chosenColor } = action.payload;
+      const { favoriteColor } = action.payload;
 
       return {
         ...state,
-        chosenColor,
+        favoriteColor,
       };
     }
     case SET_TERMS_AGREEMENT: {

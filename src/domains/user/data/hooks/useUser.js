@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getAgreedToTerms,
-  getChosenColor,
+  getFavoriteColor,
   getUserEmail,
   getUserName,
 } from 'domains/user/data/store/selectors';
@@ -15,14 +15,14 @@ export const useUser = () => {
   const dispatch = useDispatch();
   const userName = useSelector(getUserName);
   const userEmail = useSelector(getUserEmail);
-  const chosenColor = useSelector(getChosenColor);
+  const favoriteColor = useSelector(getFavoriteColor);
   const agreedToTerms = useSelector(getAgreedToTerms);
 
   const setUserInfo = (value) => {
     dispatch(setUserInfoAction(value));
   };
 
-  const setChosenColor = (value) => {
+  const setFavoriteColor = (value) => {
     dispatch(setColor(value));
   };
 
@@ -30,5 +30,17 @@ export const useUser = () => {
     dispatch(setTermsAction(value));
   };
 
-  return { userName, userEmail, setUserInfo, chosenColor, agreedToTerms, setChosenColor, setTerms };
+  // TODO: add logic
+  const passwordDigits = '*******';
+
+  return {
+    agreedToTerms,
+    favoriteColor,
+    passwordDigits,
+    setFavoriteColor,
+    setTerms,
+    setUserInfo,
+    userEmail,
+    userName,
+  };
 };
