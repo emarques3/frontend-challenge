@@ -1,5 +1,14 @@
 import React from 'react';
 
-import { Container } from 'pages/Confirmation/styles';
+import { ErrorContainer } from 'pages/Error/styles';
+import { Result } from 'domains/shell/experience/components/Result';
 
-export const ErrorPage = () => <Container>ERROR!</Container>;
+export const ErrorPage = () => (
+  <ErrorContainer>
+    <Result
+      title="Error"
+      message="Uh oh. Something went wrong. Please try again later"
+      iconPath="..."
+    />
+  </ErrorContainer>
+);

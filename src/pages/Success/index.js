@@ -1,5 +1,14 @@
 import React from 'react';
 
-import { Container } from 'pages/Confirmation/styles';
+import { SuccessContainer } from 'pages/Success/styles';
+import { Result } from 'domains/shell/experience/components/Result';
 
-export const SuccessPage = () => <Container>SUCCESS!</Container>;
+export const SuccessPage = () => (
+  <SuccessContainer>
+    <Result
+      title="Success!"
+      message="You should receive a confirmation email soon."
+      iconPath="..."
+    />
+  </SuccessContainer>
+);

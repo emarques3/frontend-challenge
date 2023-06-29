@@ -10,6 +10,7 @@ import {
   setColor,
   setTerms as setTermsAction,
   setUserInfo as setUserInfoAction,
+  reset as resetAction,
 } from 'domains/user/data/store/actions';
 import { submitUserData } from 'domains/user/data/api';
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +25,10 @@ export const useUser = () => {
   const userPassword = useSelector(getUserPassword);
   const favoriteColor = useSelector(getFavoriteColor);
   const agreedToTerms = useSelector(getAgreedToTerms);
+
+  const reset = () => {
+    dispatch(resetAction());
+  };
 
   const setUserInfo = (value) => {
     dispatch(setUserInfoAction(value));
@@ -57,6 +62,7 @@ export const useUser = () => {
     agreedToTerms,
     favoriteColor,
     passwordDigits,
+    reset,
     setFavoriteColor,
     setTerms,
     setUserInfo,

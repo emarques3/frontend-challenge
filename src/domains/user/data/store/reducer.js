@@ -1,4 +1,9 @@
-import { SET_USER_INFO, SET_COLOR, SET_TERMS_AGREEMENT } from 'domains/user/data/store/actionTypes';
+import {
+  RESET,
+  SET_COLOR,
+  SET_TERMS_AGREEMENT,
+  SET_USER_INFO,
+} from 'domains/user/data/store/actionTypes';
 
 const initialState = {
   name: 'Jon Doe',
@@ -35,6 +40,9 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         agreedToTerms,
       };
+    }
+    case RESET: {
+      return initialState;
     }
     default: {
       return state;
