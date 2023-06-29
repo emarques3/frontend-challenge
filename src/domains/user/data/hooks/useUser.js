@@ -53,7 +53,7 @@ export const useUser = () => {
     const success = await submitUserData({
       name: userName,
       email: userEmail,
-      password: userPassword ?? 'xxxxx',
+      password: userPassword,
       color: favoriteColor,
       terms: agreedToTerms,
     });
@@ -63,8 +63,7 @@ export const useUser = () => {
     setLoading(false);
   };
 
-  // TODO: add logic
-  const passwordDigits = '*******';
+  const passwordDigits = '•'.repeat(userPassword.length);
 
   return {
     agreedToTerms,
@@ -79,5 +78,6 @@ export const useUser = () => {
     submit,
     userEmail,
     userName,
+    userPassword,
   };
 };

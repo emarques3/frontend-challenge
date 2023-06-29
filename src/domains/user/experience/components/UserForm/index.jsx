@@ -7,10 +7,13 @@ import { Navigator } from 'domains/navigation/experience/components/Navigator';
 
 export const UserForm = () => {
   const navigate = useNavigate();
-  const { userName, userEmail, setUserInfo } = useUser();
+  const { userName, userEmail, userPassword, setUserInfo } = useUser();
 
   const [name, setName] = useState(userName);
   const [email, setEmail] = useState(userEmail);
+  const [password, setPassword] = useState(userPassword);
+
+  const canProceed = !!name && !!email && !!password;
 
   const onChangeName = (e) => {
     setName(e.target.value);
@@ -20,12 +23,20 @@ export const UserForm = () => {
     setEmail(e.target.value);
   };
 
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
   const onClickNext = () => {
-    setUserInfo({
-      name,
-      email,
-    });
-    navigate(AdditionalInfoRoute.path);
+    if (canProceed) {
+      setUserInfo({
+        name,
+        email,
+        password,
+      });
+      navigate(AdditionalInfoRoute.path);
+    }
+    return false;
   };
 
   return (
@@ -36,7 +47,15 @@ export const UserForm = () => {
       <Row>
         <Input placeholder="E-mail" value={email} onChange={onChangeEmail}></Input>
       </Row>
-      <Navigator buttons={[{ label: 'Next', onClick: onClickNext }]} />
+      <Row>
+        <Input
+          placeholder="Password"
+          value={password}
+          onChange={onChangePassword}
+          type="password"
+        ></Input>
+      </Row>
+      <Navigator buttons={[{ label: 'Next', onClick: onClickNext, disabled: !canProceed }]} />
     </UserContainer>
   );
 };

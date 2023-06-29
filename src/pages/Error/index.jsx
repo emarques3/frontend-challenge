@@ -7,7 +7,7 @@ export const ErrorPage = () => (
   <ErrorContainer>
     <Result
       title="Error"
-      message="Uh oh. Something went wrong. Please try again later"
+      message="Uh oh. Something went wrong. Please try again later."
       iconPath="/error.svg"
     />
   </ErrorContainer>
