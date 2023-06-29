@@ -6,16 +6,21 @@ import { ColorSelector } from 'domains/user/experience/components/ColorSelector'
 import { TermsCheckbox } from 'domains/user/experience/components/TermsCheckbox';
 import SignupRoute from 'pages/Signup/route';
 import ConfirmationRoute from 'pages/Confirmation/route';
+import { useUser } from 'domains/user/data/hooks/useUser';
 
 export const AdditionalInfoPage = () => {
   const navigate = useNavigate();
-
+  const { agreedToTerms, favoriteColor } = useUser();
+  const canProceed = agreedToTerms && favoriteColor !== '';
   const onClickBack = () => {
     navigate(SignupRoute.path);
   };
 
   const onClickNext = () => {
-    navigate(ConfirmationRoute.path);
+    if (canProceed) {
+      navigate(ConfirmationRoute.path);
+    }
+    return false;
   };
 
   return (
@@ -24,7 +29,9 @@ export const AdditionalInfoPage = () => {
       <ColorSelector />
       <TermsCheckbox />
       <Button onClick={onClickBack}>Back</Button>
-      <Button onClick={onClickNext}>Next</Button>
+      <Button onClick={onClickNext} disabled={!canProceed}>
+        Next
+      </Button>
     </Container>
   );
 };
