@@ -8,7 +8,7 @@ export const SuccessPage = () => (
     <Result
       title="Success!"
       message="You should receive a confirmation email soon."
-      iconPath="..."
+      iconPath="/success.svg"
     />
   </SuccessContainer>
 );

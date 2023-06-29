@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  LoadingWrapper,
   SelectorContainer,
   Selector,
   Option,
@@ -21,7 +22,6 @@ export const ColorSelector = () => {
 
   return (
     <SelectorContainer>
-      Color:
       <Selector onChange={onChangeColor} {...{ disabled: loading }} value={color}>
         <Option value="">Select your favorite color</Option>
         {colors.map((item) => (
@@ -30,7 +30,11 @@ export const ColorSelector = () => {
           </Option>
         ))}
       </Selector>
-      {loading ? <Loading /> : null}
+      {loading ? (
+        <LoadingWrapper>
+          <Loading />
+        </LoadingWrapper>
+      ) : null}
     </SelectorContainer>
   );
 };

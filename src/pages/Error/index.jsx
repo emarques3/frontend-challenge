@@ -8,7 +8,7 @@ export const ErrorPage = () => (
     <Result
       title="Error"
       message="Uh oh. Something went wrong. Please try again later"
-      iconPath="..."
+      iconPath="/error.svg"
     />
   </ErrorContainer>
 );

@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
+  color: #fff;
 `;
 
 export const List = styled.ul`
@@ -20,7 +21,7 @@ export const Item = styled.li`
 export const ItemLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-  color: #000;
+  color: #f55;
 
   &:hover {
     color: #f00;

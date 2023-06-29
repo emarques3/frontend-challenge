@@ -23,7 +23,8 @@ export const Header = styled.div`
 
 export const Content = styled.div`
   flex: auto;
-  padding: 10px;
+  width: 50%;
+  margin: auto;
 `;
 
 export const Footer = styled.div`

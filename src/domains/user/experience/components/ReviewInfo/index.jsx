@@ -12,11 +12,21 @@ export const ReviewInfo = () => {
   return (
     <ReviewContainer>
       <List>
-        <InfoItem>First Name: {userName}</InfoItem>
-        <InfoItem>E-mail: {userEmail}</InfoItem>
-        <InfoItem>Password: {passwordDigits}</InfoItem>
-        <InfoItem>Favorite Color: {favoriteColor}</InfoItem>
-        <InfoItem>Terms and Conditions: {agreedToTerms ? 'agreed' : 'not agreed'}</InfoItem>
+        <InfoItem>
+          First Name: <strong>{userName}</strong>
+        </InfoItem>
+        <InfoItem>
+          E-mail: <strong>{userEmail}</strong>
+        </InfoItem>
+        <InfoItem>
+          Password: <strong>{passwordDigits}</strong>
+        </InfoItem>
+        <InfoItem>
+          Favorite Color: <strong>{favoriteColor}</strong>
+        </InfoItem>
+        <InfoItem>
+          Terms and Conditions: <strong>{agreedToTerms ? 'agreed' : 'not agreed'}</strong>
+        </InfoItem>
       </List>
     </ReviewContainer>
   );

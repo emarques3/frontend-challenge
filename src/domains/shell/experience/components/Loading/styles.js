@@ -8,7 +8,7 @@ export const Spinner = styled.svg`
   height: ${(props) => props.size ?? size}px;
 
   & .path {
-    stroke: #5652bf;
+    stroke: #f77;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }

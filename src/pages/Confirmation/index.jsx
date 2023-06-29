@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Container } from 'pages/Confirmation/styles';
+import { Container, Centered, ReviewInfoWrapper } from 'pages/Confirmation/styles';
 import AdditionalInfoRoute from 'pages/AdditionalInfo/route';
 import { ReviewInfo } from 'domains/user/experience/components/ReviewInfo';
 import { useUser } from 'domains/user/data/hooks/useUser';
 import { Loading } from 'domains/shell/experience/components/Loading';
 import { Navigator } from 'domains/navigation/experience/components/Navigator';
+import { Title } from 'domains/shell/experience/components/Title';
 
 export const ConfirmationPage = () => {
   const navigate = useNavigate();
@@ -23,15 +24,21 @@ export const ConfirmationPage = () => {
 
   return (
     <Container>
-      Confirmation page
-      <ReviewInfo />
+      <Centered>
+        <Title label="Confirmation" />
+      </Centered>
+      <ReviewInfoWrapper>
+        <ReviewInfo />
+      </ReviewInfoWrapper>
       {loading ? (
-        <Loading size={150} />
+        <Centered>
+          <Loading size={80} />
+        </Centered>
       ) : (
         <Navigator
           buttons={[
             { label: 'Back', onClick: onClickBack },
-            { label: 'Next', onClick: onClickSubmit },
+            { label: 'Submit', onClick: onClickSubmit },
           ]}
         />
       )}

@@ -7,11 +7,11 @@ import {
 } from 'domains/user/data/store/actionTypes';
 
 const initialState = {
-  name: 'Jon Doe',
-  email: 'a@b.com',
+  name: '',
+  email: '',
   password: '',
-  favoriteColor: 'red',
-  agreedToTerms: true,
+  favoriteColor: '',
+  agreedToTerms: false,
   loading: false,
 };
 
