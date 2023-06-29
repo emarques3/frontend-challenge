@@ -9,7 +9,7 @@ import { useColors } from 'domains/settings/data/hooks/useColors';
 
 export const ColorSelector = () => {
   const { favoriteColor, setFavoriteColor } = useUser();
-  const { colors } = useColors();
+  const { colors, loading } = useColors();
 
   const [color, setColor] = useState(favoriteColor);
 
@@ -21,10 +21,10 @@ export const ColorSelector = () => {
   return (
     <SelectorContainer>
       Color:
-      <Selector onChange={onChangeColor}>
+      <Selector onChange={onChangeColor} {...{ disabled: loading }} value={color}>
         <Option value="">Select your favorite color</Option>
         {colors.map((item) => (
-          <Option key={item} value={item} selected={color === item}>
+          <Option key={item} value={item}>
             {item}
           </Option>
         ))}

@@ -11,7 +11,7 @@ export const TermsCheckbox = () => {
 
   return (
     <BoxContainer>
-      <Checkbox checked={agreedToTerms} onClick={onCheckboxClick} />I agree
+      <Checkbox checked={agreedToTerms} onChange={onCheckboxClick} />I agree
     </BoxContainer>
   );
 };

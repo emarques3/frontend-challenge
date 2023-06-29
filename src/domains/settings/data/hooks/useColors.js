@@ -1,18 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchColors } from 'domains/settings/data/api';
+import { getColorsArray, getColorsLoading } from 'domains/settings/data/store/selectors';
+import { setColorsArray, setColorsLoading } from 'domains/settings/data/store/actions';
 
 export const useColors = () => {
-  // TODO: initialize with colors from store, if any
-  const [colors, setColors] = useState([]);
+  const dispatch = useDispatch();
+  const colorsArray = useSelector(getColorsArray);
+  const loading = useSelector(getColorsLoading);
 
   useEffect(() => {
     async function Fecth() {
       const fetchedColors = await fetchColors();
-      // TODO: set colors in store to avoid empty state
-      setColors(fetchedColors);
+      dispatch(setColorsArray({ colorsArray: fetchedColors }));
     }
-    Fecth();
+    // Supposing once colors are received from server, they'll never change
+    if (colorsArray.length === 0) {
+      Fecth();
+    }
   }, []);
 
-  return { colors };
+  useEffect(() => {
+    if (colorsArray.length > 0) {
+      dispatch(setColorsLoading({ loading: false }));
+    }
+  }, [colorsArray]);
+
+  return { colors: colorsArray, loading };
 };
