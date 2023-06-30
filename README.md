@@ -1,6 +1,6 @@
 # Upgrade Challenge
 
-⚠️ **[See solution](https://github.com/emarques3/frontend-challenge/blob/ericmarques-solution/INTRODUCTION.md)** ⚠️
+> ⚠️ **[See solution](https://github.com/emarques3/frontend-challenge/blob/ericmarques-solution/INTRODUCTION.md)**
 
 ## Prerequisites
 
