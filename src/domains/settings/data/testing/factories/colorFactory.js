@@ -1,6 +1,11 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { faker } from '@faker-js/faker';
 
+/**
+ * Class that provides a static method to generate colors
+ * @method `make` - Allows to create color state
+ * @returns `{ colorsArray }` object
+ */
 export class ColorFactory {
   static make({ colorsArray, loading } = {}) {
     return {

@@ -7,6 +7,11 @@ const rootReducer = combineReducers({
   color: colorsReducer,
 });
 
+/**
+ *  Configures a customizable store using the `rootReducer`.
+ *  @param `preloadedState` the object containing any desired customization on the state.
+ *  @returns the store object.
+ */
 export const setupStore = (preloadedState) =>
   configureStore({
     reducer: rootReducer,
