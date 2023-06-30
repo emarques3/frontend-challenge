@@ -1,6 +1,6 @@
 # Upgrade Challenge - Eric Marques' Solution
 
-![Screenshot](public/screenshot.png)
+![Screenshot](public/Screenshot.png)
 
 The solution I adopted splits the code in three main pieces (folders):
 
