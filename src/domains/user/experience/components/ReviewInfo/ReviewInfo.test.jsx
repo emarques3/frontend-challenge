@@ -3,22 +3,15 @@ import { ReviewInfo } from '.';
 
 jest.mock('react-router-dom');
 
-describe('The Result component', () => {
-  it('renders the title', () => {
+describe('The Review Info component', () => {
+  it('renders the properties', () => {
     const content = renderWithStore(<ReviewInfo />, {
-      preloadedState: {
-        user: {
-          // TODO: make fields optional (set defaults)
-          name: 'Jon Doe',
-          email: 'a@b.c',
-          password: '123',
-          favoriteColor: 'blue',
-          agreedToTerms: true,
-          loading: true,
-        },
+      user: {
+        name: 'Jon Doe',
+        email: 'a@b.c',
       },
     });
-    // TODO: add more, make it better
     expect(content.getByText('Jon Doe')).toBeDefined();
+    expect(content.getByText('a@b.c')).toBeDefined();
   });
 });

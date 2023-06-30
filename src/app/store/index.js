@@ -7,7 +7,6 @@ const rootReducer = combineReducers({
   color: colorsReducer,
 });
 
-// TODO: find out how to override props while bootstrapping with default ones
 export const setupStore = (preloadedState) =>
   configureStore({
     reducer: rootReducer,

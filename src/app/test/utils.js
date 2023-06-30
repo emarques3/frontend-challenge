@@ -2,27 +2,22 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { setupStore } from 'app/store';
+import { UserFactory } from 'domains/user/data/testing/factories/userFactory';
+import { ColorFactory } from 'domains/settings/data/testing/factories/colorFactory';
 
-export function renderWithStore(
-  ui,
-  {
-    preloadedState = {
-      user: {
-        name: '111',
-        email: '222',
-        password: '333',
-        favoriteColor: '444',
-        agreedToTerms: true,
-        loading: true,
-      },
+export function renderWithStore(component, preloadedState = {}) {
+  const { user, color } = preloadedState;
+  const initialState = {
+    user: {
+      ...UserFactory.make(user),
     },
-    // Automatically create a store instance if no store was passed in
-    store = setupStore(preloadedState),
-    ...renderOptions
-  } = {},
-) {
-  function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>;
-  }
-  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
+    color: {
+      ...ColorFactory.make(color),
+    },
+  };
+
+  const store = setupStore(initialState);
+  const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
+
+  return { store, ...render(component, { wrapper: Wrapper }) };
 }
