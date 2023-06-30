@@ -83,6 +83,7 @@ As they're pretty static, they're a good spot for snapshot tests.
 - `prettier`: I'm used with this style of code, so I reused some preset configs I had (along with `eslint` config)
 - `faker`: no strong feelings either, just a way to have mocked data instead of hard coding them on tests.
 - `@testing-library/react` and `jest`: the ones I'm used to use.
+- `react-helmet`: just to place page titles in each `Page` file.
 
 ### Tests
 
