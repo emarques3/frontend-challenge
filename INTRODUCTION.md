@@ -120,3 +120,6 @@ It also contains generic reusable components, such as `Loading`, `Title`, so on 
 ### Accessibility
 
 I didn't do anything specific (set aria labels and other things), so I just ensured the user can navigate with the keyboard.
+
+
+![Screenshot](public/solution.gif)
