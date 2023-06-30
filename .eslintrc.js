@@ -4,8 +4,15 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true,
   },
-  extends: ['airbnb-base', 'prettier', 'eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'airbnb-base',
+    'prettier',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jest/recommended',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -13,7 +20,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['prettier'],
+  plugins: ['prettier', 'jest'],
   settings: {
     react: {
       version: 'detect',
@@ -40,5 +47,6 @@ module.exports = {
     'global-require': 'off',
     'default-param-last': 0,
     'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
 };

@@ -8,3 +8,7 @@ export const store = configureStore({
     user: userReducer,
   },
 });
+
+export function createTestStore() {
+  return store;
+}
