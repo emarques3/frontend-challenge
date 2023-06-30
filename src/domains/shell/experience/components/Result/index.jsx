@@ -27,7 +27,7 @@ export const Result = ({ title, message, iconPath }) => {
         <Title>{title}</Title>
       </Centered>
       <MessageContainer>
-        <Icon src={iconPath} />
+        <Icon src={iconPath} data-testid="test" />
         <Message>{message}</Message>
       </MessageContainer>
       <Navigator buttons={[{ label: 'Restart', onClick: onClickRestart }]} />
