@@ -80,11 +80,13 @@ As they're pretty static, they're a good spot for snapshot tests.
 
 ### Validation
 
-I kept the validations pretty simple. Namely:
+I kept the validations pretty simple:
 
 - Required fields: for the time being, instead of showing red banners or messages, I simply disabled the "next" buttons when something is missing or off. So for example, as first name is required, the "next" button from the first step will only be available when it's filled with something other than empty. I'm also checking if the colors dropdown and the "I agree with terms" checkbox are valid, otherwise the user can't proceed. Which means the easiest way to see the error page in the end is by filling the name field with `Error` (existing logic from `server.js`).
 - Fields with specific rules: the only one I used this was the email one, adding a simple regex to the `isValidEmail` function.
 - Password: I didn't add any "minimum complexity requirements" for this test sake.
+
+Having a better experience could be achieved by leveraging existing libraries that already handle validation, but I thought it wasn't this test focus.
 
 ### Navigation
 
@@ -101,3 +103,7 @@ When it comes to caching, I'm simply using the native `fetch` cache, which will 
 It's a place for more pure HTML/JSX code, such as the main `PageWrapper`, which uses the `Footer`, `Header`, ensuring the main website's visual structure is properly set.
 
 It also contains generic reusable components, such as `Loading`, `Title`, so on and so forth.
+
+### Accessibility
+
+I didn't do anything specific (set aria labels and other things), so I just ensured the user can navigate with the keyboard.
