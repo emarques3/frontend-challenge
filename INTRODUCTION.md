@@ -80,6 +80,10 @@ As they're pretty static, they're a good spot for snapshot tests.
 - `faker`: no strong feelings either, just a way to have mocked data instead of hard coding them on tests.
 - `@testing-library/react` and `jest`: the ones I'm used to use.
 
+### Tests
+
+I added a few unit tests, just to show possible approaches to testing. I didn't think of covering every single file, for the time being.
+
 ### Validation
 
 I kept the validations pretty simple:
