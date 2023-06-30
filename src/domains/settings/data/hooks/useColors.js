@@ -14,10 +14,8 @@ export const useColors = () => {
       const fetchedColors = await fetchColors();
       dispatch(setColorsArray({ colorsArray: fetchedColors }));
     }
-    // Supposing once colors are received from server, they'll never change
-    if (colorsArray.length === 0) {
-      Fecth();
-    }
+    // Caching is being handled in the API level
+    Fecth();
   }, []);
 
   useEffect(() => {
