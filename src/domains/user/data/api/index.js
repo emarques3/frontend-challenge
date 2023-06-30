@@ -1,10 +1,6 @@
+import { post } from 'app/api/request';
+
 export const submitUserData = async (user) => {
-  const response = await fetch('http://localhost:3001/api/submit', {
-    method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
+  const response = await post('http://localhost:3001/api/submit', user);
   return response.status === 200;
 };
