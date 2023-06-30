@@ -20,6 +20,8 @@ The app is responsible for the general app behavior. It handles things like:
 - Providing test tools
 - Setting global/default styles
 
+> If we were using GraphQL, this is where things such as Apollo configuration could be placed.
+
 ### API
 
 That's where the implementation for API requests lives. It may provide different tools and techniques, using different libraries. It makes things abstract for the consumer, as they don't need to know how it works internally. In other words, at this moment it's using `fetch`, but it could be changed to `axios` for example. If that was the case, this layer would ideally make it seamless to the consumer.
@@ -53,7 +55,9 @@ Controls how the "non-UI" pieces work. It contains things like:
 - state management (store), with actions, reducers, selectors, etc.
 - testing (mostly providing Factories at the moment)
 
-> _hooks_: the idea is to centralize the main logic inside them. Data manipulation/validation, store updates, dispatching actions, initiating API calls, that's the place for it. And in the end, they return whatever may be useful for who's calling them. This helps avoiding heavier logic living inside the UI components, decreasing the cognitive load needed to understand their code too.
+**_hooks_**: the idea is to centralize the main logic inside them. Data manipulation/validation, store updates, dispatching actions, initiating API calls, that's the place for it. And in the end, they return whatever may be useful for who's calling them. This helps avoiding heavier logic living inside the UI components, decreasing the cognitive load needed to understand their code too.
+
+> If we were using GraphQL, this is where queries and mutations could be placed.
 
 ### Experience
 
@@ -83,6 +87,8 @@ As they're pretty static, they're a good spot for snapshot tests.
 ### Tests
 
 I added a few unit tests, just to show possible approaches to testing. I didn't think of covering every single file, for the time being.
+
+When it comes to mocking data, besides using `faker`, I used the Factory pattern to generate mocked data. This way, the factory becomes responsible for controlling how the data should be shaped, making it seamless to the rest of the test code. It also allows for custom data to be passed, meaning it will override the default ones from the factory.
 
 ### Validation
 
