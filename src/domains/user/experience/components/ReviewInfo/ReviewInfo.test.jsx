@@ -1,5 +1,5 @@
 import { renderWithStore } from 'app/test/utils';
-import { ReviewInfo } from '.';
+import { ReviewInfo } from 'domains/user/experience/components/ReviewInfo';
 
 jest.mock('react-router-dom');
 
@@ -13,5 +13,6 @@ describe('The Review Info component', () => {
     });
     expect(content.getByText('Jon Doe')).toBeDefined();
     expect(content.getByText('a@b.c')).toBeDefined();
+    // so on and so forth...
   });
 });

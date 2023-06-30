@@ -22,10 +22,10 @@ export const ColorSelector = () => {
 
   return (
     <SelectorContainer>
-      <Selector onChange={onChangeColor} disabled={loading} value={color}>
+      <Selector onChange={onChangeColor} disabled={loading} value={color} data-testid="select">
         <Option value="">Select your favorite color</Option>
         {colors.map((item) => (
-          <Option key={item} value={item}>
+          <Option key={item} value={item} data-testid="option">
             {item}
           </Option>
         ))}

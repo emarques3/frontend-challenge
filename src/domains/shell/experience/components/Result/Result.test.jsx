@@ -1,5 +1,5 @@
 import { renderWithStore } from 'app/test/utils';
-import { Result } from '.';
+import { Result } from 'domains/shell/experience/components/Result';
 
 jest.mock('react-router-dom');
 

@@ -16,7 +16,7 @@ export const TermsCheckbox = () => {
 
   return (
     <BoxContainer>
-      <Checkbox checked={agreedToTerms} onChange={onCheckboxClick} />
+      <Checkbox checked={agreedToTerms} onChange={onCheckboxClick} data-testid="test" />
       <Label onClick={onCheckboxClick}>
         I agree to{' '}
         <TermsLink href="" target="_blank">

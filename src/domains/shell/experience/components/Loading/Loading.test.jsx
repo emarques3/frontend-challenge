@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { render } from '@testing-library/react';
 
-import { Loading } from '.';
+import { Loading } from 'domains/shell/experience/components/Loading';
 
 describe('The Loading component', () => {
   it('renders the correnct size', () => {
