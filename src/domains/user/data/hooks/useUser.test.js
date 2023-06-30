@@ -1,8 +1,17 @@
 import { renderHookWithStore } from 'app/test/utils';
 
 import { useUser } from 'domains/user/data/hooks/useUser';
+import { submitUserData } from 'domains/user/data/api';
 
 jest.mock('react-router-dom');
+
+jest.mock('domains/user/data/api', () => ({
+  submitUserData: jest.fn(),
+}));
+
+jest.mock('react-router-dom', () => ({
+  useNavigate: () => jest.fn(),
+}));
 
 describe('The useUser hook', () => {
   it('is initialized ith the right data', () => {
@@ -31,5 +40,28 @@ describe('The useUser hook', () => {
       },
     });
     expect(result.current.passwordDigits).toBe('•••••••••');
+  });
+
+  it('submits the data', () => {
+    const { result } = renderHookWithStore(() => useUser(), {
+      user: {
+        name: 'Jon Doe',
+        email: 'j@d.c',
+        password: '123456',
+        favoriteColor: 'red',
+        agreedToTerms: true,
+        loading: true,
+      },
+    });
+
+    result.current.submit();
+
+    expect(submitUserData).toHaveBeenCalledWith({
+      name: 'Jon Doe',
+      email: 'j@d.c',
+      password: '123456',
+      color: 'red',
+      terms: true,
+    });
   });
 });
