@@ -1,5 +1,7 @@
 # Upgrade Challenge
 
+⚠️ **[See solution](https://github.com/emarques3/frontend-challenge/blob/ericmarques-solution/INTRODUCTION.md)** ⚠️
+
 ## Prerequisites
 
 - Latest [Node.js LTS](https://nodejs.org/en/download/)
