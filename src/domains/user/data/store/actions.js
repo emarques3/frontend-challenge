@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import { useNavigate } from 'react-router-dom';
 import { createAction } from 'redux-actions';
 import {
   RESET,

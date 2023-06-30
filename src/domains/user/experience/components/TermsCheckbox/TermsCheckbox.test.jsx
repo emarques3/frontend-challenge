@@ -24,7 +24,7 @@ describe('The Terms Checkbox component', () => {
   });
 
   it('changes correctly', () => {
-    const { getByTestId }= renderWithStore(<TermsCheckbox />, {
+    const { getByTestId } = renderWithStore(<TermsCheckbox />, {
       user: {
         agreedToTerms: false,
       },
