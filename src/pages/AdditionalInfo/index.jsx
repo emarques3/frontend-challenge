@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
 import { ColorSelector } from 'domains/user/experience/components/ColorSelector';
@@ -28,6 +29,9 @@ export const AdditionalInfoPage = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Eric&apos;s Solution - Additional Info</title>
+      </Helmet>
       <TitleWrapper>
         <Title label="Additional Info" />
       </TitleWrapper>
